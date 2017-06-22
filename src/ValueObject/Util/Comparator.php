@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\ValueObjects\Util;
+namespace Domain\ValueObject\Util;
 
 class Comparator
 {

@@ -1,8 +1,9 @@
 <?php
 
-namespace Domain\ValueObjects;
+namespace Domain\ValueObject;
 
-use Domain\ValueObjects\Util\Comparator;
+use Domain\ValueObject\Util\Comparator;
+use Respect\Validation\Validator;
 
 abstract class ValueObject implements Comparable
 {
@@ -40,4 +41,12 @@ abstract class ValueObject implements Comparable
      * Returns a string representation of the object.
      */
     abstract public function __toString();
+
+    /**
+     * Creates a new validator instance.
+     */
+    protected function validator(): Validator
+    {
+        return Validator::create();
+    }
 }

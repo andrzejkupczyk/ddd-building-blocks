@@ -2,7 +2,7 @@
 
 namespace Domain\Entity;
 
-interface Comparable
+interface Equatable
 {
     /**
      * Computes the equality on the entity identity.

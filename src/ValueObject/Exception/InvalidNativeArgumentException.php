@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\ValueObjects\Exception;
+namespace Domain\ValueObject\Exception;
 
 class InvalidNativeArgumentException extends \InvalidArgumentException
 {
