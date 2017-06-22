@@ -1,0 +1,27 @@
+{
+    "name": "andrzejkupczyk/ddd-building-blocks",
+    "description": "Domain-Driven Design components implementation",
+    "require": {
+        "php": "^7.0",
+        "ramsey/uuid": "^3.6"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Domain\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrzej Kupczyk",
+            "email": "kontakt@andrzejkupczyk.pl"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
