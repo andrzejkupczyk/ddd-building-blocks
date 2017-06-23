@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Entity;
+namespace Domain\Contracts\Entity;
 
 interface Equatable
 {

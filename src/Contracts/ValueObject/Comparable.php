@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\ValueObject;
+namespace Domain\Contracts\ValueObject;
 
 interface Comparable
 {

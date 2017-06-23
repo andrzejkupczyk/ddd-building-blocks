@@ -2,11 +2,13 @@
 
 namespace Domain\Entity;
 
-use Domain\ValueObject\ValueObject as Identifier;
+use Domain\Contracts\Entity\Equatable;
+use Domain\Contracts\Entity\Identifiable;
+use Domain\Contracts\ValueObject\ValueObject;
 
 abstract class Entity implements Equatable, Identifiable
 {
-    /** @var Identifier */
+    /** @var ValueObject */
     private $id;
 
     /**
@@ -20,7 +22,7 @@ abstract class Entity implements Equatable, Identifiable
     /**
      * {@inheritDoc}
      */
-    public function id(): Identifier
+    public function id(): ValueObject
     {
         return $this->id;
     }

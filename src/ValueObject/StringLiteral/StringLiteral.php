@@ -2,28 +2,13 @@
 
 namespace Domain\ValueObject\StringLiteral;
 
-use Domain\ValueObject\Exception\InvalidNativeArgumentException;
-use Domain\ValueObject\ValueObject;
+use Domain\ValueObject\SingleValue;
 use Respect\Validation\Validator;
 
-class StringLiteral extends ValueObject
+class StringLiteral extends SingleValue
 {
     /** @var string */
     protected $value;
-
-    public static function fromNative(): ValueObject
-    {
-        return new static(func_get_arg(0));
-    }
-
-    public function __construct($value)
-    {
-        if (!$this->validator()->validate($value)) {
-            throw new InvalidNativeArgumentException($value, ['string']);
-        }
-
-        $this->value = $value;
-    }
 
     public function isEmpty(): bool
     {

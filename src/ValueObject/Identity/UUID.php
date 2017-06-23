@@ -2,21 +2,14 @@
 
 namespace Domain\ValueObject\Identity;
 
-use Domain\ValueObject\Exception\InvalidNativeArgumentException;
-use Domain\ValueObject\StringLiteral\StringLiteral;
-use Domain\ValueObject\ValueObject;
+use Domain\ValueObject\SingleValue;
 use Ramsey\Uuid\Uuid as BaseUuid;
 use Respect\Validation\Validator;
 
-class UUID extends StringLiteral
+class UUID extends SingleValue
 {
-    /** @var BaseUuid */
+    /** @var string */
     protected $value;
-
-    public static function fromNative(): ValueObject
-    {
-        return new static(func_get_arg(0));
-    }
 
     public static function generateAsString(): string
     {
@@ -27,14 +20,17 @@ class UUID extends StringLiteral
 
     public function __construct($value = null)
     {
-        if (null !== $value) {
-            if (!$this->validator()->validate($value)) {
-                throw new InvalidNativeArgumentException($value, ['UUID string']);
-            }
-            $uuid = $value;
-        }
+        parent::__construct($value ?: BaseUuid::uuid4()->toString());
+    }
 
-        parent::__construct(strval($uuid ?? BaseUuid::uuid4()));
+    public function toNative(): string
+    {
+        return $this->value;
+    }
+
+    public function __toString()
+    {
+        return $this->toNative();
     }
 
     protected function validator(): Validator
