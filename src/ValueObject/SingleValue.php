@@ -28,7 +28,7 @@ abstract class SingleValue implements ValueObject
             return false;
         }
 
-        return $this->toNative() === call_user_func([$valueObject, 'toNative']);
+        return $this->toNative() === $valueObject->toNative();
     }
 
     protected function assert()

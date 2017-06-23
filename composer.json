@@ -9,11 +9,6 @@
     "require-dev": {
         "phpspec/phpspec": "^3.4"
     },
-    "autoload": {
-        "psr-4": {
-            "Domain\\": "src/"
-        }
-    },
     "license": "MIT",
     "authors": [
         {
@@ -21,8 +16,16 @@
             "email": "kontakt@andrzejkupczyk.pl"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Domain\\": "src/"
+        }
+    },
     "config": {
         "optimize-autoloader": true,
         "sort-packages": true
+    },
+    "scripts": {
+        "test": "phpspec run --ansi"
     }
 }
