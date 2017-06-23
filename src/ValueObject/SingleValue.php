@@ -4,7 +4,6 @@ namespace Domain\ValueObject;
 
 use Domain\Assert\Assert;
 use Domain\Contracts\ValueObject\ValueObject;
-use Domain\ValueObject\Util\Comparator;
 use Respect\Validation\Validator;
 
 abstract class SingleValue implements ValueObject
@@ -24,7 +23,7 @@ abstract class SingleValue implements ValueObject
 
     public function sameValueAs(ValueObject $valueObject): bool
     {
-        if (false === Comparator::classEquals($this, $valueObject)) {
+        if (false === Util::classEquals($this, $valueObject)) {
             return false;
         }
 

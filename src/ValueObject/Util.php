@@ -1,8 +1,11 @@
 <?php
 
-namespace Domain\ValueObject\Util;
+namespace Domain\ValueObject;
 
-class Comparator
+/**
+ * Utility class for methods used across the value objects.
+ */
+class Util
 {
     /**
      * Tells whether two objects are of the same class.
