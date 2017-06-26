@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Contracts\ValueObject;
+namespace Domain\ValueObject;
 
 interface ValueObject extends Comparable, NativeValue
 {

@@ -2,9 +2,8 @@
 
 namespace Domain\Entity;
 
-use Domain\Contracts\Entity\Identifiable;
-use Domain\Contracts\ValueObject\ValueObject as Identifier;
 use Domain\Entity\Exception\InvalidMethodException;
+use Domain\ValueObject\ValueObject as Identifier;
 
 /**
  * @method bool equals(Identifiable $entity)
@@ -13,19 +12,19 @@ use Domain\Entity\Exception\InvalidMethodException;
 abstract class Aggregate
 {
     /** @var Entity */
-    private $root;
+    private $aggregateRoot;
 
-    public function __construct(Entity $root)
+    public function __construct(Entity $aggregateRoot)
     {
-        $this->root = $root;
+        $this->aggregateRoot = $aggregateRoot;
     }
 
     public function __call(string $name, array $arguments)
     {
-        if (!method_exists($this->root, $name)) {
+        if (!method_exists($this->aggregateRoot, $name)) {
             throw new InvalidMethodException($name);
         }
 
-        return call_user_func_array([$this->root, $name], $arguments);
+        return call_user_func_array([$this->aggregateRoot, $name], $arguments);
     }
 }

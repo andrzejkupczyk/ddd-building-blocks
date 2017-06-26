@@ -3,7 +3,6 @@
 namespace Domain\ValueObject;
 
 use Domain\Assert\Assert;
-use Domain\Contracts\ValueObject\ValueObject;
 use Respect\Validation\Validator;
 
 abstract class SingleValue implements ValueObject

@@ -6,7 +6,7 @@ use Domain\ValueObject\SingleValue;
 use Ramsey\Uuid\Uuid as BaseUuid;
 use Respect\Validation\Validator;
 
-class UUID extends SingleValue
+class Uuid extends SingleValue
 {
     /** @var string */
     protected $value;

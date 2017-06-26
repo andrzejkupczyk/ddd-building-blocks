@@ -3,15 +3,15 @@
 namespace spec\Domain\ValueObject\Identity;
 
 use Domain\Assert\InvalidValueException;
-use Domain\Contracts\ValueObject\ValueObject;
-use Domain\ValueObject\Identity\UUID;
+use Domain\ValueObject\Identity\Uuid;
+use Domain\ValueObject\ValueObject;
 use PhpSpec\ObjectBehavior;
 
-class UUIDSpec extends ObjectBehavior
+class UuidSpec extends ObjectBehavior
 {
     public function it_is_initializable()
     {
-        $this->shouldHaveType(UUID::class);
+        $this->shouldHaveType(Uuid::class);
         $this->shouldImplement(ValueObject::class);
     }
 

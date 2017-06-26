@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\Contracts\Entity;
+namespace Domain\Entity;
 
-use Domain\Contracts\ValueObject\ValueObject;
+use Domain\ValueObject\ValueObject;
 
 interface Identifiable
 {

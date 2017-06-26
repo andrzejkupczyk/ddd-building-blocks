@@ -2,9 +2,7 @@
 
 namespace Domain\Entity;
 
-use Domain\Contracts\Entity\Equatable;
-use Domain\Contracts\Entity\Identifiable;
-use Domain\Contracts\ValueObject\ValueObject;
+use Domain\ValueObject\ValueObject;
 
 abstract class Entity implements Equatable, Identifiable
 {

@@ -3,8 +3,8 @@
 namespace spec\Domain\ValueObject\StringLiteral;
 
 use Domain\Assert\InvalidValueException;
-use Domain\Contracts\ValueObject\ValueObject;
 use Domain\ValueObject\StringLiteral\StringLiteral;
+use Domain\ValueObject\ValueObject;
 use PhpSpec\ObjectBehavior;
 
 class StringLiteralSpec extends ObjectBehavior
