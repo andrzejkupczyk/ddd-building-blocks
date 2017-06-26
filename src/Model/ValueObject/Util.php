@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\ValueObject;
+namespace Model\ValueObject;
 
 /**
  * Utility class for methods used across the value objects.

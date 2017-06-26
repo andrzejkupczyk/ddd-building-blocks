@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\ValueObject;
+namespace Model\ValueObject;
 
-use Domain\Assert\Assert;
+use Model\Assert\Assert;
 use Respect\Validation\Validator;
 
 abstract class SingleValue implements ValueObject

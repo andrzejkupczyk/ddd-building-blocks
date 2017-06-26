@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Assert;
+namespace Model\Assert;
 
 use Respect\Validation\Exceptions\NestedValidationException;
 use Respect\Validation\Validatable;

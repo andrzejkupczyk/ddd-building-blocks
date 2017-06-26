@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\Entity;
+namespace Model\Entity;
 
-use Domain\ValueObject\ValueObject;
+use Model\ValueObject\ValueObject;
 
 abstract class Entity implements Equatable, Identifiable
 {
@@ -12,7 +12,7 @@ abstract class Entity implements Equatable, Identifiable
     /**
      * {@inheritDoc}
      */
-    public function equals(Identifiable $entity): bool
+    public function sameIdentityAs(Identifiable $entity): bool
     {
         return $this->id()->sameValueAs($entity->id());
     }

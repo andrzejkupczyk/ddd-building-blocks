@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\Entity;
+namespace Model\Entity;
 
-use Domain\ValueObject\ValueObject;
+use Model\ValueObject\ValueObject;
 
 interface Identifiable
 {

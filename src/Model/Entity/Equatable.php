@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Entity;
+namespace Model\Entity;
 
 interface Equatable
 {
@@ -10,5 +10,5 @@ interface Equatable
      * @param  Identifiable $entity
      * @return bool
      */
-    public function equals(Identifiable $entity): bool;
+    public function sameIdentityAs(Identifiable $entity): bool;
 }

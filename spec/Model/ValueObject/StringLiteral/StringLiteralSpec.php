@@ -1,23 +1,26 @@
 <?php
 
-namespace spec\Domain\ValueObject\Identity;
+namespace spec\Model\ValueObject\StringLiteral;
 
-use Domain\Assert\InvalidValueException;
-use Domain\ValueObject\Identity\Uuid;
-use Domain\ValueObject\ValueObject;
+use Model\Assert\InvalidValueException;
+use Model\ValueObject\StringLiteral\StringLiteral;
+use Model\ValueObject\ValueObject;
 use PhpSpec\ObjectBehavior;
 
-class UuidSpec extends ObjectBehavior
+class StringLiteralSpec extends ObjectBehavior
 {
     public function it_is_initializable()
     {
-        $this->shouldHaveType(Uuid::class);
+        $value = 'foobar';
+
+        $this->beConstructedWith($value);
+        $this->shouldHaveType(StringLiteral::class);
         $this->shouldImplement(ValueObject::class);
     }
 
     public function it_invalidates_itself()
     {
-        $value = '123456';
+        $value = 123;
 
         $this->beConstructedWith($value);
         $this->shouldThrow(InvalidValueException::class)->duringInstantiation();
@@ -25,7 +28,7 @@ class UuidSpec extends ObjectBehavior
 
     public function it_validates_itself()
     {
-        $value = '00000000-0000-0000-0000-000000000000';
+        $value = 'foobar';
 
         $this->beConstructedWith($value);
         $this->shouldNotThrow(InvalidValueException::class)->duringInstantiation();

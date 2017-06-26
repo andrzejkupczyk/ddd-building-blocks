@@ -1,15 +1,15 @@
 <?php
 
-namespace Domain\Entity;
+namespace Model\Entity;
 
-use Domain\Entity\Exception\InvalidMethodException;
-use Domain\ValueObject\ValueObject as Identifier;
+use Model\Entity\Exception\InvalidMethodException;
+use Model\ValueObject\ValueObject as Identifier;
 
 /**
- * @method bool equals(Identifiable $entity)
+ * @method bool sameIdentityAs(Identifiable $entity)
  * @method Identifier id()
  */
-abstract class Aggregate
+abstract class Aggregate implements Identifiable
 {
     /** @var Entity */
     private $aggregateRoot;

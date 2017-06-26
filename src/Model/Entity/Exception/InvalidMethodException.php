@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Entity\Exception;
+namespace Model\Entity\Exception;
 
 class InvalidMethodException extends \BadMethodCallException
 {

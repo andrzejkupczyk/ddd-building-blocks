@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\ValueObject\StringLiteral;
+namespace Model\ValueObject\StringLiteral;
 
-use Domain\ValueObject\SingleValue;
+use Model\ValueObject\SingleValue;
 use Respect\Validation\Validator;
 
 class StringLiteral extends SingleValue

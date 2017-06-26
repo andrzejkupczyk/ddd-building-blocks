@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\ValueObject\Identity;
+namespace Model\ValueObject\Identity;
 
-use Domain\ValueObject\SingleValue;
+use Model\ValueObject\SingleValue;
 use Ramsey\Uuid\Uuid as BaseUuid;
 use Respect\Validation\Validator;
 

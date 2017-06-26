@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Assert;
+namespace Model\Assert;
 
 class InvalidValueException extends \InvalidArgumentException
 {
