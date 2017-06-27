@@ -18,6 +18,14 @@ class StringLiteralSpec extends ObjectBehavior
         $this->shouldImplement(ValueObject::class);
     }
 
+    public function it_checks_if_value_is_empty()
+    {
+        $value = '';
+
+        $this->beConstructedWith($value);
+        $this->isEmpty()->shouldReturn(true);
+    }
+
     public function it_invalidates_itself()
     {
         $value = 123;
