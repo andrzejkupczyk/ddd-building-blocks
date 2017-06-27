@@ -3,10 +3,10 @@
 namespace Model\ValueObject\Identity;
 
 use Model\Assert\Assertion;
-use Model\ValueObject\SingleValue;
+use Model\ValueObject\StringLiteral\StringLiteral;
 use Ramsey\Uuid\Uuid as BaseUuid;
 
-class Uuid extends SingleValue
+class Uuid extends StringLiteral
 {
     /** @var string */
     protected $value;
@@ -22,16 +22,6 @@ class Uuid extends SingleValue
     {
         Assertion::nullOrUuid($value);
 
-        $this->value = $value ?: BaseUuid::uuid4()->toString();
-    }
-
-    public function toNative(): string
-    {
-        return $this->value;
-    }
-
-    public function __toString()
-    {
-        return $this->toNative();
+        parent::__construct($value ?: BaseUuid::uuid4()->toString());
     }
 }
