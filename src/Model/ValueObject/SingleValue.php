@@ -2,9 +2,6 @@
 
 namespace Model\ValueObject;
 
-use Model\Assert\Assert;
-use Respect\Validation\Validator;
-
 abstract class SingleValue implements ValueObject
 {
     protected $value;
@@ -14,12 +11,6 @@ abstract class SingleValue implements ValueObject
         return new static(func_get_arg(0));
     }
 
-    public function __construct($value)
-    {
-        $this->assert()->is(static::validator(), $value);
-        $this->value = $value;
-    }
-
     public function sameValueAs(ValueObject $valueObject): bool
     {
         if (false === Util::classEquals($this, $valueObject)) {
@@ -27,15 +18,5 @@ abstract class SingleValue implements ValueObject
         }
 
         return $this->toNative() === $valueObject->toNative();
-    }
-
-    protected function assert()
-    {
-        return new Assert(get_called_class());
-    }
-
-    protected function validator(): Validator
-    {
-        return Validator::create();
     }
 }

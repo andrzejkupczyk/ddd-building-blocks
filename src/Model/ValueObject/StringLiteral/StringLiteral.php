@@ -2,13 +2,20 @@
 
 namespace Model\ValueObject\StringLiteral;
 
+use Model\Assert\Assertion;
 use Model\ValueObject\SingleValue;
-use Respect\Validation\Validator;
 
 class StringLiteral extends SingleValue
 {
     /** @var string */
     protected $value;
+
+    public function __construct($value)
+    {
+        Assertion::string($value);
+
+        $this->value = $value;
+    }
 
     public function isEmpty(): bool
     {
@@ -23,10 +30,5 @@ class StringLiteral extends SingleValue
     public function __toString()
     {
         return $this->toNative();
-    }
-
-    protected function validator(): Validator
-    {
-        return parent::validator()->stringType();
     }
 }

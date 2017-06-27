@@ -2,7 +2,7 @@
 
 namespace spec\Model\ValueObject\StringLiteral;
 
-use Model\Assert\InvalidValueException;
+use Model\Assert\AssertionFailedException;
 use Model\ValueObject\StringLiteral\StringLiteral;
 use Model\ValueObject\ValueObject;
 use PhpSpec\ObjectBehavior;
@@ -23,7 +23,7 @@ class StringLiteralSpec extends ObjectBehavior
         $value = 123;
 
         $this->beConstructedWith($value);
-        $this->shouldThrow(InvalidValueException::class)->duringInstantiation();
+        $this->shouldThrow(AssertionFailedException::class)->duringInstantiation();
     }
 
     public function it_validates_itself()
@@ -31,6 +31,6 @@ class StringLiteralSpec extends ObjectBehavior
         $value = 'foobar';
 
         $this->beConstructedWith($value);
-        $this->shouldNotThrow(InvalidValueException::class)->duringInstantiation();
+        $this->shouldNotThrow(AssertionFailedException::class)->duringInstantiation();
     }
 }

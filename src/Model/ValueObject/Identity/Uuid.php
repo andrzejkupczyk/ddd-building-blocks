@@ -2,9 +2,9 @@
 
 namespace Model\ValueObject\Identity;
 
+use Model\Assert\Assertion;
 use Model\ValueObject\SingleValue;
 use Ramsey\Uuid\Uuid as BaseUuid;
-use Respect\Validation\Validator;
 
 class Uuid extends SingleValue
 {
@@ -20,7 +20,9 @@ class Uuid extends SingleValue
 
     public function __construct($value = null)
     {
-        parent::__construct($value ?: BaseUuid::uuid4()->toString());
+        Assertion::nullOrUuid($value);
+
+        $this->value = $value ?: BaseUuid::uuid4()->toString();
     }
 
     public function toNative(): string
@@ -31,10 +33,5 @@ class Uuid extends SingleValue
     public function __toString()
     {
         return $this->toNative();
-    }
-
-    protected function validator(): Validator
-    {
-        return parent::validator()->regex('/' . BaseUuid::VALID_PATTERN . '/');
     }
 }

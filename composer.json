@@ -3,8 +3,8 @@
     "description": "Domain-Driven Design components implementation",
     "require": {
         "php": "^7.0",
-        "ramsey/uuid": "^3.6",
-        "respect/validation": "^1.1"
+        "beberlei/assert": "^2.7",
+        "ramsey/uuid": "^3.6"
     },
     "require-dev": {
         "phpspec/phpspec": "^3.4"
