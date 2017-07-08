@@ -4,6 +4,6 @@ namespace Model\Assert;
 
 use Assert\InvalidArgumentException;
 
-class AssertionFailedException extends InvalidArgumentException
+class AssertionException extends InvalidArgumentException
 {
 }

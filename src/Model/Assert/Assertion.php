@@ -2,9 +2,7 @@
 
 namespace Model\Assert;
 
-use Assert\Assertion as BaseAssertion;
-
-class Assertion extends BaseAssertion
+class Assertion extends \Assert\Assertion
 {
-    protected static $exceptionClass = AssertionFailedException::class;
+    protected static $exceptionClass = AssertionException::class;
 }
