@@ -1,9 +1,6 @@
 <?php
 
-namespace Domain\Model\Assert;
-
-use Model\Assert\Assertion;
-use Model\Assert\LazyAssertionException;
+namespace Model\Assert;
 
 class Assert extends \Assert\Assert
 {

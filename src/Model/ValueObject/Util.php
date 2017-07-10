@@ -10,11 +10,11 @@ class Util
     /**
      * Tells whether two objects are of the same class.
      *
-     * @param  object $first
-     * @param  object $second
+     * @param  Comparable $first
+     * @param  Comparable $second
      * @return bool
      */
-    public static function classEquals($first, $second): bool
+    public static function classEquals(Comparable $first, Comparable $second): bool
     {
         return get_class($first) === get_class($second);
     }
@@ -22,10 +22,10 @@ class Util
     /**
      * Returns full namespaced class as a string.
      *
-     * @param  object $object
+     * @param  Comparable $object
      * @return string
      */
-    public static function getClassAsString($object): string
+    public static function getClassAsString(Comparable $object): string
     {
         return get_class($object);
     }

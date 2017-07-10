@@ -11,6 +11,9 @@ class UuidSpec extends ObjectBehavior
 {
     public function it_is_initializable()
     {
+        $value = '00000000-0000-0000-0000-000000000000';
+
+        $this->beConstructedWith($value);
         $this->shouldHaveType(Uuid::class);
         $this->shouldImplement(ValueObject::class);
     }

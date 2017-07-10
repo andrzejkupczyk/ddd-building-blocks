@@ -13,6 +13,8 @@ interface NativeValue
 
     /**
      * Returns the native value of an object.
+     *
+     * @return mixed
      */
     public function toNative();
 }
