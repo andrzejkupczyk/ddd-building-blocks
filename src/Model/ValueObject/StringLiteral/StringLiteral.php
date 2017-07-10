@@ -2,24 +2,13 @@
 
 namespace Model\ValueObject\StringLiteral;
 
-use Model\Assert\Assertion;
 use Model\ValueObject\SingleValue;
 
 class StringLiteral extends SingleValue
 {
-    /** @var string */
-    protected $value;
-
-    public function __construct($value)
-    {
-        Assertion::string($value);
-
-        $this->value = $value;
-    }
-
     public function isEmpty(): bool
     {
-        return strlen($this->toNative()) == 0;
+        return $this->toNative() === '';
     }
 
     public function toNative(): string
@@ -30,5 +19,10 @@ class StringLiteral extends SingleValue
     public function __toString()
     {
         return $this->toNative();
+    }
+
+    protected function assertThat($value)
+    {
+        return parent::assertThat($value)->string();
     }
 }

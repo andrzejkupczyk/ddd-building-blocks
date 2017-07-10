@@ -2,26 +2,23 @@
 
 namespace Model\ValueObject\Identity;
 
-use Model\Assert\Assertion;
 use Model\ValueObject\StringLiteral\StringLiteral;
 use Ramsey\Uuid\Uuid as BaseUuid;
 
 class Uuid extends StringLiteral
 {
-    /** @var string */
-    protected $value;
-
     public static function generateAsString(): string
     {
-        $uuid = new static();
+        $uuid = new static(BaseUuid::uuid4()->toString());
 
         return $uuid->toNative();
     }
 
-    public function __construct($value = null)
+    /**
+     * {@inheritDoc}
+     */
+    protected function assertThat($value)
     {
-        Assertion::nullOrUuid($value);
-
-        parent::__construct($value ?: BaseUuid::uuid4()->toString());
+        return parent::assertThat($value)->uuid();
     }
 }
