@@ -1,5 +1,5 @@
 # Domain-Driven Design components implementation
-![Build Status](https://travis-ci.org/andrzejkupczyk/ddd-building-blocks.svg?branch=master)
+[![Build Status](https://travis-ci.org/andrzejkupczyk/ddd-building-blocks.svg?branch=master)](https://travis-ci.org/andrzejkupczyk/ddd-building-blocks)
 
 This repository helps me experiment with the DDD approach.
 
