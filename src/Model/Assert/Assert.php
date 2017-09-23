@@ -1,6 +1,6 @@
 <?php
 
-namespace Model\Assert;
+namespace WebGarden\Model\Assert;
 
 class Assert extends \Assert\Assert
 {

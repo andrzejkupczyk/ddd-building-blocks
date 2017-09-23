@@ -1,8 +1,8 @@
 <?php
 
-namespace Model\ValueObject;
+namespace WebGarden\Model\ValueObject;
 
-use Model\Assert\Assert;
+use WebGarden\Model\Assert\Assert;
 
 abstract class SingleValue implements ValueObject
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace spec\Model\ValueObject\Identity;
+namespace spec\WebGarden\Model\ValueObject\Identity;
 
-use Model\Assert\AssertionException;
-use Model\ValueObject\Identity\Uuid;
-use Model\ValueObject\ValueObject;
+use WebGarden\Model\Assert\AssertionException;
+use WebGarden\Model\ValueObject\Identity\Uuid;
+use WebGarden\Model\ValueObject\ValueObject;
 use PhpSpec\ObjectBehavior;
 
 class UuidSpec extends ObjectBehavior

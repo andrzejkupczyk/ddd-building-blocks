@@ -1,6 +1,6 @@
 <?php
 
-namespace Model\Assert;
+namespace WebGarden\Model\Assert;
 
 use Assert\InvalidArgumentException;
 

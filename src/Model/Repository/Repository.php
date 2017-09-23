@@ -1,9 +1,9 @@
 <?php
 
-namespace Model\Repository;
+namespace WebGarden\Model\Repository;
 
-use Model\Entity\Identifiable;
-use Model\ValueObject\ValueObject;
+use WebGarden\Model\Entity\Identifiable;
+use WebGarden\Model\ValueObject\ValueObject;
 
 interface Repository
 {

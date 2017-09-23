@@ -1,8 +1,8 @@
 <?php
 
-namespace Model\ValueObject\StringLiteral;
+namespace WebGarden\Model\ValueObject\StringLiteral;
 
-use Model\ValueObject\SingleValue;
+use WebGarden\Model\ValueObject\SingleValue;
 
 class StringLiteral extends SingleValue
 {

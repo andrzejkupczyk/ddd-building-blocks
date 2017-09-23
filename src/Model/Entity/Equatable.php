@@ -1,6 +1,6 @@
 <?php
 
-namespace Model\Entity;
+namespace WebGarden\Model\Entity;
 
 interface Equatable
 {

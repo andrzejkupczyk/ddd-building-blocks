@@ -1,8 +1,8 @@
 <?php
 
-namespace Model\Entity;
+namespace WebGarden\Model\Entity;
 
-use Model\ValueObject\ValueObject;
+use WebGarden\Model\ValueObject\ValueObject;
 
 abstract class Entity implements Equatable, Identifiable
 {

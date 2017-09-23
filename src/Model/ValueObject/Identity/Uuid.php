@@ -1,8 +1,8 @@
 <?php
 
-namespace Model\ValueObject\Identity;
+namespace WebGarden\Model\ValueObject\Identity;
 
-use Model\ValueObject\StringLiteral\StringLiteral;
+use WebGarden\Model\ValueObject\StringLiteral\StringLiteral;
 use Ramsey\Uuid\Uuid as BaseUuid;
 
 class Uuid extends StringLiteral

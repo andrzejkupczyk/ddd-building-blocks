@@ -1,6 +1,6 @@
 <?php
 
-namespace Model\ValueObject;
+namespace WebGarden\Model\ValueObject;
 
 interface Comparable
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Model\Entity;
+namespace WebGarden\Model\Entity;
 
-use Model\Entity\Exception\InvalidMethodException;
-use Model\ValueObject\ValueObject as Identifier;
+use WebGarden\Model\Entity\Exception\InvalidMethodException;
+use WebGarden\Model\ValueObject\ValueObject as Identifier;
 
 /**
  * @method bool sameIdentityAs(Identifiable $entity)

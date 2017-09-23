@@ -1,6 +1,6 @@
 <?php
 
-namespace Model\Entity\Exception;
+namespace WebGarden\Model\Entity\Exception;
 
 class InvalidMethodException extends \BadMethodCallException
 {

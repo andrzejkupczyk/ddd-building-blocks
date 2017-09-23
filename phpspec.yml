@@ -1,0 +1,4 @@
+suites:
+    default:
+        namespace: WebGarden
+        psr4_prefix: WebGarden
