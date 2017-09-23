@@ -9,7 +9,7 @@ use PhpSpec\ObjectBehavior;
 
 class UuidSpec extends ObjectBehavior
 {
-    public function it_is_initializable()
+    function it_is_initializable()
     {
         $value = '00000000-0000-0000-0000-000000000000';
 
@@ -18,7 +18,14 @@ class UuidSpec extends ObjectBehavior
         $this->shouldImplement(ValueObject::class);
     }
 
-    public function it_invalidates_itself()
+    function it_can_be_generated()
+    {
+        $this->beConstructedThrough('generate');
+
+        $this->shouldHaveType(Uuid::class);
+    }
+
+    function it_invalidates_itself()
     {
         $value = '123456';
 
@@ -26,7 +33,7 @@ class UuidSpec extends ObjectBehavior
         $this->shouldThrow(AssertionException::class)->duringInstantiation();
     }
 
-    public function it_validates_itself()
+    function it_validates_itself()
     {
         $value = '00000000-0000-0000-0000-000000000000';
 

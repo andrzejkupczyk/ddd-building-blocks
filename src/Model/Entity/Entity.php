@@ -7,7 +7,7 @@ use Model\ValueObject\ValueObject;
 abstract class Entity implements Equatable, Identifiable
 {
     /** @var ValueObject */
-    private $id;
+    protected $id;
 
     /**
      * {@inheritDoc}

@@ -7,11 +7,9 @@ use Ramsey\Uuid\Uuid as BaseUuid;
 
 class Uuid extends StringLiteral
 {
-    public static function generateAsString(): string
+    public static function generate()
     {
-        $uuid = new static(BaseUuid::uuid4()->toString());
-
-        return $uuid->toNative();
+        return new static(BaseUuid::uuid4()->toString());
     }
 
     /**

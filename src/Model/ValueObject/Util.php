@@ -12,6 +12,7 @@ class Util
      *
      * @param  Comparable $first
      * @param  Comparable $second
+     *
      * @return bool
      */
     public static function classEquals(Comparable $first, Comparable $second): bool
@@ -23,6 +24,7 @@ class Util
      * Returns full namespaced class as a string.
      *
      * @param  Comparable $object
+     *
      * @return string
      */
     public static function getClassAsString(Comparable $object): string

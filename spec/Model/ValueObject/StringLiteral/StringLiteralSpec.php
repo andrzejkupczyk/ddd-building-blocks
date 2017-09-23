@@ -9,7 +9,7 @@ use PhpSpec\ObjectBehavior;
 
 class StringLiteralSpec extends ObjectBehavior
 {
-    public function it_is_initializable()
+    function it_is_initializable()
     {
         $value = 'foobar';
 
@@ -18,7 +18,7 @@ class StringLiteralSpec extends ObjectBehavior
         $this->shouldImplement(ValueObject::class);
     }
 
-    public function it_checks_if_value_is_empty()
+    function it_checks_if_value_is_empty()
     {
         $value = '';
 
@@ -26,7 +26,7 @@ class StringLiteralSpec extends ObjectBehavior
         $this->isEmpty()->shouldReturn(true);
     }
 
-    public function it_invalidates_itself()
+    function it_invalidates_itself()
     {
         $value = 123;
 
@@ -34,7 +34,7 @@ class StringLiteralSpec extends ObjectBehavior
         $this->shouldThrow(AssertionException::class)->duringInstantiation();
     }
 
-    public function it_validates_itself()
+    function it_validates_itself()
     {
         $value = 'foobar';
 

@@ -30,6 +30,7 @@ abstract class SingleValue implements ValueObject
 
     /**
      * @param  mixed $value
+     *
      * @return \Assert\AssertionChain
      */
     protected function assertThat($value)
