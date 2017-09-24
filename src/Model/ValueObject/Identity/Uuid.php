@@ -2,14 +2,14 @@
 
 namespace WebGarden\Model\ValueObject\Identity;
 
-use WebGarden\Model\ValueObject\StringLiteral\StringLiteral;
 use Ramsey\Uuid\Uuid as BaseUuid;
+use WebGarden\Model\ValueObject\StringLiteral\StringLiteral;
 
 class Uuid extends StringLiteral
 {
-    public static function generate()
+    public static function generate(): Uuid
     {
-        return new static(BaseUuid::uuid4()->toString());
+        return new self(BaseUuid::uuid4()->toString());
     }
 
     /**
