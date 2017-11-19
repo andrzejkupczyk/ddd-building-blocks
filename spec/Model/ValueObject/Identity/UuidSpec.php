@@ -11,11 +11,9 @@ class UuidSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $value = '00000000-0000-0000-0000-000000000000';
+        $this->beConstructedWith('00000000-0000-0000-0000-000000000000');
 
-        $this->beConstructedWith($value);
         $this->shouldHaveType(Uuid::class);
-        $this->shouldImplement(ValueObject::class);
     }
 
     function it_can_be_generated()
@@ -27,17 +25,15 @@ class UuidSpec extends ObjectBehavior
 
     function it_invalidates_itself()
     {
-        $value = '123456';
+        $this->beConstructedWith('123456');
 
-        $this->beConstructedWith($value);
         $this->shouldThrow(AssertionException::class)->duringInstantiation();
     }
 
     function it_validates_itself()
     {
-        $value = '00000000-0000-0000-0000-000000000000';
+        $this->beConstructedWith('00000000-0000-0000-0000-000000000000');
 
-        $this->beConstructedWith($value);
         $this->shouldNotThrow(AssertionException::class)->duringInstantiation();
     }
 }

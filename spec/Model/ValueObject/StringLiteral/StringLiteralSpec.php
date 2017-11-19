@@ -11,34 +11,29 @@ class StringLiteralSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $value = 'foobar';
+        $this->beConstructedWith('foobar');
 
-        $this->beConstructedWith($value);
         $this->shouldHaveType(StringLiteral::class);
-        $this->shouldImplement(ValueObject::class);
     }
 
     function it_checks_if_value_is_empty()
     {
-        $value = '';
+        $this->beConstructedWith('');
 
-        $this->beConstructedWith($value);
         $this->isEmpty()->shouldReturn(true);
     }
 
     function it_invalidates_itself()
     {
-        $value = 123;
+        $this->beConstructedWith(123);
 
-        $this->beConstructedWith($value);
         $this->shouldThrow(AssertionException::class)->duringInstantiation();
     }
 
     function it_validates_itself()
     {
-        $value = 'foobar';
+        $this->beConstructedWith('foobar');
 
-        $this->beConstructedWith($value);
         $this->shouldNotThrow(AssertionException::class)->duringInstantiation();
     }
 }
