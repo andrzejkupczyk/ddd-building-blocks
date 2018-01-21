@@ -2,10 +2,9 @@
 
 namespace spec\WebGarden\Model\ValueObject\StringLiteral;
 
+use PhpSpec\ObjectBehavior;
 use WebGarden\Model\Assert\AssertionException;
 use WebGarden\Model\ValueObject\StringLiteral\StringLiteral;
-use WebGarden\Model\ValueObject\ValueObject;
-use PhpSpec\ObjectBehavior;
 
 class StringLiteralSpec extends ObjectBehavior
 {

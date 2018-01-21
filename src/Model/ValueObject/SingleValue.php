@@ -8,6 +8,9 @@ abstract class SingleValue implements ValueObject
 {
     protected $value;
 
+    /**
+     * {@inheritDoc}
+     */
     public static function fromNative()
     {
         return new static(func_get_arg(0));
@@ -19,13 +22,13 @@ abstract class SingleValue implements ValueObject
         $this->value = $value;
     }
 
-    public function sameValueAs(ValueObject $valueObject): bool
+    /**
+     * {@inheritDoc}
+     */
+    final public function sameValueAs(ValueObject $valueObject)
     {
-        if (false === Util::classEquals($this, $valueObject)) {
-            return false;
-        }
-
-        return $this->toNative() === $valueObject->toNative();
+        return $this->toNative() === $valueObject->toNative()
+            && get_called_class() == get_class($valueObject);
     }
 
     /**

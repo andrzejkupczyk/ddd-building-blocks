@@ -2,10 +2,9 @@
 
 namespace spec\WebGarden\Model\ValueObject\Identity;
 
+use PhpSpec\ObjectBehavior;
 use WebGarden\Model\Assert\AssertionException;
 use WebGarden\Model\ValueObject\Identity\Uuid;
-use WebGarden\Model\ValueObject\ValueObject;
-use PhpSpec\ObjectBehavior;
 
 class UuidSpec extends ObjectBehavior
 {

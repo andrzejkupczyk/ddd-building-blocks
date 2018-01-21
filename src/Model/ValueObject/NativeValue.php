@@ -5,14 +5,14 @@ namespace WebGarden\Model\ValueObject;
 interface NativeValue
 {
     /**
-     * Returns an object taking PHP native value(s) as argument(s).
+     * Return an object taking PHP native value(s) as argument(s).
      *
      * @return static
      */
     public static function fromNative();
 
     /**
-     * Returns the native value of an object.
+     * Return the native value of an object.
      *
      * @return mixed
      */

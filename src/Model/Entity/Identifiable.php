@@ -7,7 +7,7 @@ use WebGarden\Model\ValueObject\ValueObject;
 interface Identifiable
 {
     /**
-     * Gets the entity id.
+     * Return identity of the entity.
      *
      * @return ValueObject
      */

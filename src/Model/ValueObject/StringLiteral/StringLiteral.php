@@ -6,7 +6,12 @@ use WebGarden\Model\ValueObject\SingleValue;
 
 class StringLiteral extends SingleValue
 {
-    public function isEmpty(): bool
+    /**
+     * Check whether the value is empty.
+     *
+     * @return bool
+     */
+    public function isEmpty()
     {
         return $this->toNative() === '';
     }

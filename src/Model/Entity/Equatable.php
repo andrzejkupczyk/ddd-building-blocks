@@ -5,7 +5,7 @@ namespace WebGarden\Model\Entity;
 interface Equatable
 {
     /**
-     * Computes the equality on the entity identity.
+     * Compute the equality on the entity identity.
      *
      * @param  Identifiable $entity
      *
