@@ -9,14 +9,6 @@ class Integer extends SingleValue
     /**
      * {@inheritDoc}
      */
-    public function toNative()
-    {
-        return $this->value;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function __toString()
     {
         return strval($this->value);

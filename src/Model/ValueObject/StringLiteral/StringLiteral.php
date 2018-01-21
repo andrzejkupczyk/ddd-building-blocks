@@ -19,14 +19,6 @@ class StringLiteral extends SingleValue
     /**
      * {@inheritDoc}
      */
-    public function toNative(): string
-    {
-        return $this->value;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function __toString()
     {
         return $this->toNative();

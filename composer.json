@@ -4,6 +4,7 @@
     "require": {
         "php": "^7.0",
         "beberlei/assert": "^2.7",
+        "myclabs/php-enum": "^1.5",
         "ramsey/uuid": "^3.6"
     },
     "require-dev": {

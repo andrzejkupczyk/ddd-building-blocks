@@ -2,13 +2,12 @@
 
 namespace WebGarden\Model\ValueObject;
 
+use MyCLabs\Enum\Enum;
 use WebGarden\Model\Assert\Assert;
 
-abstract class SingleValue implements ValueObject
+abstract class EnumValue extends Enum implements ValueObject
 {
     use ComparableValue;
-
-    protected $value;
 
     /**
      * {@inheritDoc}
@@ -20,25 +19,18 @@ abstract class SingleValue implements ValueObject
 
     public function __construct($value)
     {
-        $this->assertThat($value);
+        Assert::that(parent::isValid($value))->true(
+            sprintf("Value '%s' is not part of the enum %s.", $value, get_called_class())
+        );
+
         $this->value = $value;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function toNative()
+    final public function toNative()
     {
-        return $this->value;
-    }
-
-    /**
-     * @param  mixed $value
-     *
-     * @return \Assert\AssertionChain
-     */
-    protected function assertThat($value)
-    {
-        return Assert::that($value);
+        return parent::getValue();
     }
 }
