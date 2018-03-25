@@ -28,11 +28,6 @@ class SingleValueSpec extends ObjectBehavior
 
 class DummySingleValue extends SingleValue
 {
-    public function toNative()
-    {
-        return $this->value;
-    }
-
     public function __toString()
     {
         // not applicable

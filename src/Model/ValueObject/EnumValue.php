@@ -9,9 +9,6 @@ abstract class EnumValue extends Enum implements ValueObject
 {
     use ComparableValue;
 
-    /**
-     * {@inheritDoc}
-     */
     public static function fromNative()
     {
         return new static(func_get_arg(0));
@@ -26,9 +23,6 @@ abstract class EnumValue extends Enum implements ValueObject
         $this->value = $value;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     final public function toNative()
     {
         return parent::getValue();

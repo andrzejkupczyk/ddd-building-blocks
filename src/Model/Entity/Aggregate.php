@@ -2,7 +2,6 @@
 
 namespace WebGarden\Model\Entity;
 
-use WebGarden\Model\Entity\Exception\InvalidMethodException;
 use WebGarden\Model\ValueObject\ValueObject as Identifier;
 
 /**
@@ -21,10 +20,12 @@ abstract class Aggregate implements Identifiable
 
     public function __call(string $name, array $arguments)
     {
-        if (!method_exists($this->aggregateRoot, $name)) {
-            throw new InvalidMethodException($name);
+        if (method_exists($this->aggregateRoot, $name)) {
+            return call_user_func_array([$this->aggregateRoot, $name], $arguments);
         }
 
-        return call_user_func_array([$this->aggregateRoot, $name], $arguments);
+        throw new \BadMethodCallException(
+            sprintf("Method %s::%s() does not exist.", static::class, $name)
+        );
     }
 }

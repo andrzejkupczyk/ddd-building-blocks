@@ -10,9 +10,6 @@ abstract class SingleValue implements ValueObject
 
     protected $value;
 
-    /**
-     * {@inheritDoc}
-     */
     public static function fromNative()
     {
         return new static(func_get_arg(0));
@@ -24,18 +21,18 @@ abstract class SingleValue implements ValueObject
         $this->value = $value;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function toNative()
     {
         return $this->value;
     }
 
     /**
+     * Start an assertion chain that is happening on the passed value.
+     *
      * @param  mixed $value
      *
      * @return \Assert\AssertionChain
+     * @SuppressWarnings(PHPMD.StaticAccess)
      */
     protected function assertThat($value)
     {

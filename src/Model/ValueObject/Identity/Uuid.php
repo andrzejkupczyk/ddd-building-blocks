@@ -12,9 +12,6 @@ class Uuid extends StringLiteral
         return new self(BaseUuid::uuid4()->toString());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     protected function assertThat($value)
     {
         return parent::assertThat($value)->uuid();
