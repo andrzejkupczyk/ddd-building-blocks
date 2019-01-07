@@ -8,6 +8,10 @@ abstract class SingleValue implements ValueObject
 {
     use ComparableValue;
 
+    /** @var string|\Assert\Assert */
+    protected $assert = Assert::class;
+
+    /** @var mixed */
     protected $value;
 
     public static function fromNative()
@@ -30,12 +34,10 @@ abstract class SingleValue implements ValueObject
      * Start an assertion chain that is happening on the passed value.
      *
      * @param  mixed $value
-     *
      * @return \Assert\AssertionChain
-     * @SuppressWarnings(PHPMD.StaticAccess)
      */
     protected function assertThat($value)
     {
-        return Assert::that($value);
+        return $this->assert::that($value);
     }
 }

@@ -7,9 +7,8 @@ interface Comparable
     /**
      * Compare two ValueObject and tell whether they can be considered equal.
      *
-     * @param  ValueObject $object
-     *
+     * @param  object|\WebGarden\Model\ValueObject\ValueObject $valueObject
      * @return bool
      */
-    public function sameValueAs(ValueObject $object);
+    public function sameValueAs(object $valueObject);
 }

@@ -2,11 +2,9 @@
 
 namespace WebGarden\Model\Entity;
 
-use WebGarden\Model\ValueObject\ValueObject;
-
 abstract class Entity implements Equatable, Identifiable
 {
-    /** @var ValueObject */
+    /** @var \WebGarden\Model\ValueObject\ValueObject */
     protected $id;
 
     public function sameIdentityAs(Identifiable $entity): bool
@@ -14,7 +12,10 @@ abstract class Entity implements Equatable, Identifiable
         return $this->id()->sameValueAs($entity->id());
     }
 
-    public function id(): ValueObject
+    /**
+     * @return \WebGarden\Model\ValueObject\ValueObject
+     */
+    public function id()
     {
         return $this->id;
     }

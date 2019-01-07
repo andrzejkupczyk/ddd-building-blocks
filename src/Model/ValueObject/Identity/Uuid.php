@@ -7,9 +7,13 @@ use WebGarden\Model\ValueObject\StringLiteral\StringLiteral;
 
 class Uuid extends StringLiteral
 {
-    public static function generate(): Uuid
+    /**
+     * @return \WebGarden\Model\ValueObject\Identity\Uuid
+     * @throws \Exception if there's something wrong with generating an UUID
+     */
+    public static function generate()
     {
-        return new self(BaseUuid::uuid4()->toString());
+        return new static(BaseUuid::uuid4()->toString());
     }
 
     protected function assertThat($value)

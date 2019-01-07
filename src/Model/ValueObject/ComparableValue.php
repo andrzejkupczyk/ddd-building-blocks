@@ -6,14 +6,12 @@ trait ComparableValue
 {
     /**
      * @see Comparable::sameValueAs()
-     *
-     * @param  ValueObject $object
-     *
+     * @param  object|\WebGarden\Model\ValueObject\ValueObject $valueObject
      * @return bool
      */
-    public function sameValueAs(ValueObject $object)
+    public function sameValueAs(object $valueObject)
     {
-        return $this->toNative() === $object->toNative()
-            && get_called_class() == get_class($object);
+        return get_called_class() == get_class($valueObject)
+            && $this->toNative() === $valueObject->toNative();
     }
 }

@@ -2,11 +2,9 @@
 
 namespace WebGarden\Model\Entity;
 
-use WebGarden\Model\ValueObject\ValueObject as Identifier;
-
 /**
  * @method bool sameIdentityAs(Identifiable $entity)
- * @method Identifier id()
+ * @method \WebGarden\Model\ValueObject\ValueObject id()
  */
 abstract class Aggregate implements Identifiable
 {

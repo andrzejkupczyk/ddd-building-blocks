@@ -2,33 +2,27 @@
 
 namespace WebGarden\Model\Repository;
 
-use WebGarden\Model\Entity\Identifiable;
-use WebGarden\Model\ValueObject\ValueObject;
-
 interface Repository
 {
     /**
      * Return an entity identified by the given ValueObject.
      *
-     * @param  ValueObject $identity
-     *
-     * @return mixed
+     * @param  \WebGarden\Model\ValueObject\ValueObject $identity
+     * @return \WebGarden\Model\Entity\Identifiable
      */
-    public function get(ValueObject $identity);
+    public function get($identity);
 
     /**
      * Return all entities.
      *
      * @return array
      */
-    public function getAll(): array;
+    public function getAll();
 
     /**
      * Store the given entity.
      *
-     * @param  Identifiable $entity
-     *
-     * @return mixed
+     * @param  \WebGarden\Model\Entity\Identifiable $entity
      */
-    public function store(Identifiable $entity);
+    public function store($entity);
 }

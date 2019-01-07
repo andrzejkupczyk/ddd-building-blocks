@@ -2,14 +2,12 @@
 
 namespace WebGarden\Model\Entity;
 
-use WebGarden\Model\ValueObject\ValueObject;
-
 interface Identifiable
 {
     /**
      * Return identity of the entity.
      *
-     * @return ValueObject
+     * @return \WebGarden\Model\ValueObject\ValueObject
      */
-    public function id(): ValueObject;
+    public function id();
 }

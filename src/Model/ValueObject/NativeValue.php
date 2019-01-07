@@ -7,7 +7,7 @@ interface NativeValue
     /**
      * Return an object taking PHP native value(s) as argument(s).
      *
-     * @return static
+     * @return self
      */
     public static function fromNative();
 
