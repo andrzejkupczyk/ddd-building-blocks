@@ -14,4 +14,12 @@ trait ComparableValue
         return get_called_class() == get_class($valueObject)
             && $this->toNative() === $valueObject->toNative();
     }
+
+    /**
+     * Return the native value of an object.
+     *
+     * @see \WebGarden\Model\ValueObject\NativeValue
+     * @return mixed
+     */
+    abstract public function toNative();
 }
