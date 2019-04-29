@@ -23,7 +23,7 @@ abstract class EnumValue extends Enum implements ValueObject
             sprintf("Value '%s' is not part of the enum %s.", $value, get_called_class())
         );
 
-        $this->value = $value;
+        parent::__construct($value);
     }
 
     final public function toNative()

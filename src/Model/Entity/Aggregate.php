@@ -19,7 +19,7 @@ abstract class Aggregate implements Identifiable
     public function __call(string $name, array $arguments)
     {
         if (method_exists($this->aggregateRoot, $name)) {
-            return call_user_func_array([$this->aggregateRoot, $name], $arguments);
+            return $this->aggregateRoot->$name(...$arguments);
         }
 
         throw new \BadMethodCallException(
