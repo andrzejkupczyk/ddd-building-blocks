@@ -2,6 +2,7 @@
 
 namespace WebGarden\Model\ValueObject\NullValue;
 
+use BadMethodCallException;
 use WebGarden\Model\ValueObject\ComparableValue;
 use WebGarden\Model\ValueObject\ValueObject;
 
@@ -19,7 +20,7 @@ class NullValue implements ValueObject
      */
     public static function fromNative()
     {
-        throw new \BadMethodCallException('Cannot create a NullValue object via this method.');
+        throw new BadMethodCallException('Cannot create a NullValue object via this method.');
     }
 
     public function __toString()

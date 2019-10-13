@@ -2,6 +2,8 @@
 
 namespace WebGarden\Model\Entity;
 
+use BadMethodCallException;
+
 /**
  * @method bool sameIdentityAs(Identifiable $entity)
  * @method \WebGarden\Model\ValueObject\ValueObject id()
@@ -22,8 +24,8 @@ abstract class Aggregate implements Identifiable
             return $this->aggregateRoot->$name(...$arguments);
         }
 
-        throw new \BadMethodCallException(
-            sprintf("Method %s::%s() does not exist.", static::class, $name)
+        throw new BadMethodCallException(
+            sprintf('Method %s::%s() does not exist.', static::class, $name)
         );
     }
 }
