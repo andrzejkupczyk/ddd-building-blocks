@@ -11,27 +11,33 @@
     ],
     "require": {
         "php": "^7.2",
+        "andrzejkupczyk/ddd-generic-subdomain": "^1.0",
         "beberlei/assert": "^3.2",
-        "myclabs/php-enum": "^1.6",
+        "myclabs/php-enum": "^1.7",
         "ramsey/uuid": "^3.8"
     },
     "require-dev": {
         "andrzejkupczyk/phpqa": "^1.0",
-        "phpspec/phpspec": "^5.1"
+        "phpspec/phpspec": "^6.0"
     },
     "autoload": {
         "psr-4": {
-            "WebGarden\\": "src/"
+            "WebGarden\\Model\\": "src/"
         }
     },
     "scripts": {
         "test": "phpspec run --ansi",
+        "analyse": [
+            "phpmd src text cleancode,codesize,controversial,design,unusedcode,naming",
+            "phpcpd --min-tokens=20 src",
+            "phpcs --standard=PSR2 src",
+            "phpstan analyse --level max --no-progress src",
+            "php-cs-fixer fix --dry-run"
+        ],
+        "cs:fix": "php-cs-fixer fix",
         "ci": [
             "@test",
-            "phpmd src/ text phpmd.xml",
-            "phpcpd --min-tokens=20 src",
-            "phpcs --standard=PSR2 src/",
-            "phpstan analyse --level max --no-progress src"
+            "@analyse"
         ]
     },
     "extra": {
