@@ -1,4 +1,4 @@
 suites:
     default:
-        namespace: WebGarden
-        psr4_prefix: WebGarden
+        namespace: WebGarden\Model
+        psr4_prefix: WebGarden\Model
