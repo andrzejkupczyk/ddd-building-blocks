@@ -5,6 +5,7 @@ namespace WebGarden\Model\Entity;
 use BadMethodCallException;
 
 /**
+ * @deprecated Will be replaced with an interface in the next major version
  * @method bool sameIdentityAs(Identifiable $entity)
  * @method \WebGarden\Model\ValueObject\ValueObject id()
  */

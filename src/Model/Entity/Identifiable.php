@@ -2,6 +2,9 @@
 
 namespace WebGarden\Model\Entity;
 
+/**
+ * @deprecated Will be removed in the next major version
+ */
 interface Identifiable
 {
     /**

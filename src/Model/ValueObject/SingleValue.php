@@ -14,6 +14,9 @@ abstract class SingleValue implements ValueObject
     /** @var mixed */
     protected $value;
 
+    /**
+     * @deprecated Will be removed in the next major version
+     */
     public static function fromNative()
     {
         return new static(func_get_arg(0));
@@ -25,6 +28,9 @@ abstract class SingleValue implements ValueObject
         $this->value = $value;
     }
 
+    /**
+     * @deprecated Will be removed in the next major version
+     */
     public function toNative()
     {
         return $this->value;
@@ -33,7 +39,8 @@ abstract class SingleValue implements ValueObject
     /**
      * Start an assertion chain that is happening on the passed value.
      *
-     * @param  mixed $value
+     * @param mixed $value
+     *
      * @return \Assert\AssertionChain
      */
     protected function assertThat($value)

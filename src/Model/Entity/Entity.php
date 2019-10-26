@@ -2,6 +2,9 @@
 
 namespace WebGarden\Model\Entity;
 
+/**
+ * @deprecated Will be replaced with an interface in the next major version
+ */
 abstract class Entity implements Equatable, Identifiable
 {
     /** @var \WebGarden\Model\ValueObject\ValueObject */

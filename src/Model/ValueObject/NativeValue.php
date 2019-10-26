@@ -2,6 +2,9 @@
 
 namespace WebGarden\Model\ValueObject;
 
+/**
+ * @deprecated Will be removed in the next major version
+ */
 interface NativeValue
 {
     /**

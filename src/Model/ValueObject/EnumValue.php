@@ -5,6 +5,9 @@ namespace WebGarden\Model\ValueObject;
 use MyCLabs\Enum\Enum;
 use WebGarden\Model\Assert\Assert;
 
+/**
+ * @deprecated Will be replaced with the WebGarden\Model\ValueObject\Enum\Enum in the next major version
+ */
 abstract class EnumValue extends Enum implements ValueObject
 {
     use ComparableValue;
