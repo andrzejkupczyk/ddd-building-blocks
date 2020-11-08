@@ -5,40 +5,45 @@
     "authors": [
         {
             "name": "Andrzej Kupczyk",
-            "email": "kontakt@andrzejkupczyk.pl",
-            "homepage": "https://andrzejkupczyk.pl"
+            "email": "kontakt@andrzejkupczyk.pl"
         }
     ],
+    "support": {
+        "issues": "https://github.com/andrzejkupczyk/ddd-building-blocks/issues"
+    },
     "require": {
-        "php": "^7.2",
+        "php": "^7.4",
         "andrzejkupczyk/ddd-generic-subdomain": "^1.0",
         "beberlei/assert": "^3.2",
         "myclabs/php-enum": "^1.7",
-        "ramsey/uuid": "^3.8"
+        "ramsey/uuid": "^4.1",
+        "symfony/polyfill-php80": "^v1.20"
     },
     "require-dev": {
-        "andrzejkupczyk/phpqa": "^1.0",
-        "phpspec/phpspec": "^6.0"
+        "phpspec/phpspec": "^7.0"
+    },
+    "provide": {
+        "andrzejkupczyk/ddd-generic-subdomain-implementation": "1.0"
     },
     "autoload": {
         "psr-4": {
             "WebGarden\\Model\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "spec\\WebGarden\\Model\\": "spec/"
+        }
+    },
     "scripts": {
         "test": "phpspec run --ansi",
         "analyse": [
-            "phpmd src text cleancode,codesize,controversial,design,unusedcode,naming",
-            "phpcpd --min-tokens=20 src",
-            "phpcs --standard=PSR2 src",
-            "phpstan analyse --level max --no-progress src",
-            "php-cs-fixer fix --dry-run"
+            "tools/phpcs --standard=PSR2 src",
+            "tools/phpstan analyse --no-progress",
+            "tools/psalm",
+            "@cs:fix --dry-run"
         ],
-        "cs:fix": "php-cs-fixer fix",
-        "ci": [
-            "@test",
-            "@analyse"
-        ]
+        "cs:fix": "tools/php-cs-fixer fix --ansi --diff"
     },
     "extra": {
         "branch-alias": {

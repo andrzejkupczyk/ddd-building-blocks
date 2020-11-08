@@ -4,12 +4,34 @@ declare(strict_types=1);
 
 namespace WebGarden\Model\ValueObject\Number;
 
-use WebGarden\Model\ValueObject\SingleValue;
+use Assert\AssertionChain;
+use WebGarden\Model\Assert\Assert;
+use WebGarden\Model\ValueObject\SimpleComparison;
+use WebGarden\Model\ValueObject\ValueObject;
 
-class Integer extends SingleValue
+/**
+ * @psalm-immutable
+ */
+class Integer implements ValueObject
 {
-    protected function assertThat($value)
+    use SimpleComparison;
+
+    private int $value;
+
+    public function __construct(int $value)
     {
-        return parent::assertThat($value)->integer();
+        static::assertThat($value);
+
+        $this->value = $value;
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
+
+    protected static function assertThat(int $value): AssertionChain
+    {
+        return Assert::that($value)->integer();
     }
 }

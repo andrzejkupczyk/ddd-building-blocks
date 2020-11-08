@@ -4,12 +4,31 @@ declare(strict_types=1);
 
 namespace WebGarden\Model\ValueObject\Identity;
 
+use Ramsey\Uuid\Uuid as BaseUuid;
+use WebGarden\Model\Assert\Assert;
 use WebGarden\Model\ValueObject\StringLiteral\StringLiteral;
 
-class Uuid extends StringLiteral
+/**
+ * @psalm-immutable
+ */
+final class Uuid extends StringLiteral
 {
-    protected function assertThat($value)
+    public function __construct(string $value)
     {
-        return parent::assertThat($value)->uuid();
+        Assert::that(BaseUuid::isValid($value))->true(
+            \sprintf('Value "%s" is not a valid UUID', $value)
+        );
+
+        parent::__construct($value);
+    }
+
+    public static function generate(): self
+    {
+        return new self(BaseUuid::uuid4()->toString());
+    }
+
+    public static function createEmpty(): self
+    {
+        return new self(BaseUuid::NIL);
     }
 }

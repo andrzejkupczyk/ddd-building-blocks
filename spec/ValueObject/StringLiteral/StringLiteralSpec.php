@@ -24,11 +24,4 @@ class StringLiteralSpec extends ObjectBehavior
 
         $this->isEmpty()->shouldReturn(true);
     }
-
-    function it_should_throw_an_exception_when_value_is_not_a_string()
-    {
-        $this->beConstructedWith(123);
-
-        $this->shouldThrow(AssertionFailed::class)->duringInstantiation();
-    }
 }
