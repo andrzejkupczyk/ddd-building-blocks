@@ -18,6 +18,20 @@ class UuidSpec extends ObjectBehavior
         $this->shouldNotThrow(AssertionFailed::class)->duringInstantiation();
     }
 
+    function it_creates_an_empty_uuid()
+    {
+        $this->beConstructedThrough('createEmpty');
+
+        $this->shouldHaveType(Uuid::class);
+    }
+
+    function it_generates_random_uuid()
+    {
+        $this->beConstructedThrough('generate');
+
+        $this->shouldHaveType(Uuid::class);
+    }
+
     function it_should_throw_an_exception_when_value_is_not_a_valid_uuid()
     {
         $this->beConstructedWith('123456');

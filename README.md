@@ -1,8 +1,6 @@
 # Domain-Driven Design components
 
 ![PHP requirement](https://img.shields.io/packagist/php-v/andrzejkupczyk/ddd-building-blocks?logo=php&style=for-the-badge)
-![Build status](https://img.shields.io/travis/andrzejkupczyk/ddd-building-blocks/master?logo=travis&style=for-the-badge)
-![Code quality](https://img.shields.io/scrutinizer/quality/g/andrzejkupczyk/ddd-building-blocks?logo=scrutinizer&style=for-the-badge)
 
 This repository helps me experiment with the DDD approach.
 
@@ -28,15 +26,11 @@ composer require andrzejkupczyk/ddd-building-blocks
 ## Example usages
 
 ```php
-<?php
+<?php namespace Math\Number;
 
-namespace Math\Number;
-
-use WebGarden\Model\ValueObject\Number\Integer;
-
-class Natural extends Integer
+final class Natural extends Integer
 {
-    protected function assertThat($value)
+    protected static function assertThat(int $value)
     {
         return parent::assertThat($value)->greaterThan(0);
     }

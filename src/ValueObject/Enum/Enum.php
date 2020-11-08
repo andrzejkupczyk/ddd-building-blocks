@@ -5,24 +5,33 @@ declare(strict_types=1);
 namespace WebGarden\Model\ValueObject\Enum;
 
 use MyCLabs\Enum\Enum as BaseEnum;
-use WebGarden\Model\ValueObject\Validation;
+use WebGarden\Model\Assert\Assert;
 use WebGarden\Model\ValueObject\ValueObject;
 
+/**
+ * @psalm-immutable
+ */
 abstract class Enum extends BaseEnum implements ValueObject
 {
-    use Validation;
-
+    /**
+     * @param mixed $value
+     */
     final public function __construct($value)
     {
-        $this->assertThat(self::isValid($value))->true(
-            \sprintf("Value '%s' is not part of the enum %s.", $value, static::class)
+        Assert::that(self::isValid($value))->true(
+            \sprintf('Value "%s" is not part of the enum %s.', $value, static::class)
         );
 
         parent::__construct($value);
     }
 
-    public function sameValueAs(ValueObject $object): bool
+    public function __toString(): string
     {
-        return $this->equals($object);
+        return parent::__toString();
+    }
+
+    public function sameValueAs(ValueObject $other): bool
+    {
+        return $this->equals($other);
     }
 }

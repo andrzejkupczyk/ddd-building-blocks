@@ -17,11 +17,4 @@ class IntegerSpec extends ObjectBehavior
         $this->shouldHaveType(Integer::class);
         $this->shouldNotThrow(AssertionFailed::class)->duringInstantiation();
     }
-
-    function it_should_throw_an_exception_when_value_is_not_an_integer()
-    {
-        $this->beConstructedWith(123.30);
-
-        $this->shouldThrow(AssertionFailed::class)->duringInstantiation();
-    }
 }

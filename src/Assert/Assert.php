@@ -6,7 +6,6 @@ namespace WebGarden\Model\Assert;
 
 use Assert\Assert as BaseAssert;
 
-/** @SuppressWarnings(PHPMD.LongVariable) */
 class Assert extends BaseAssert
 {
     protected static $assertionClass = Assertion::class;
