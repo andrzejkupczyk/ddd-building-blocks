@@ -12,12 +12,11 @@
         "issues": "https://github.com/andrzejkupczyk/ddd-building-blocks/issues"
     },
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.4 || ^8.0",
         "andrzejkupczyk/ddd-generic-subdomain": "^1.0",
-        "beberlei/assert": "^3.2",
+        "beberlei/assert": "^3.3",
         "myclabs/php-enum": "^1.7",
-        "ramsey/uuid": "^4.1",
-        "symfony/polyfill-php80": "^v1.20"
+        "ramsey/uuid": "^4.1"
     },
     "require-dev": {
         "phpspec/phpspec": "^7.0"
