@@ -12,7 +12,7 @@
         "issues": "https://github.com/andrzejkupczyk/ddd-building-blocks/issues"
     },
     "require": {
-        "php": "^7.4",
+        "php": "^7.4|^8.0",
         "andrzejkupczyk/ddd-generic-subdomain": "^1.0",
         "beberlei/assert": "^3.2",
         "myclabs/php-enum": "^1.7",
