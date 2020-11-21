@@ -1,0 +1,6 @@
+*.md            export-ignore
+*.php           diff=php eol=lf
+.*              export-ignore
+/*.xml          export-ignore
+/tests          export-ignore
+phpstan.neon    export-ignore
