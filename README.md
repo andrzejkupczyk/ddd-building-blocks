@@ -1,7 +1,7 @@
 # Domain-Driven Design components
 
 ![PHP requirement](https://img.shields.io/packagist/php-v/andrzejkupczyk/ddd-building-blocks?logo=php&style=for-the-badge "PHP requirement")
-[![GitHub license](https://img.shields.io/github/license/andrzejkupczyk/ddd-building-blocks?style=for-the-badge)](https://github.com/andrzejkupczyk/php-boilerplate/blob/main/LICENSE "License")
+[![GitHub license](https://img.shields.io/github/license/andrzejkupczyk/ddd-building-blocks?style=for-the-badge)](https://github.com/andrzejkupczyk/ddd-building-blocks/blob/main/LICENSE "License")
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/andrzejkupczyk/ddd-building-blocks?sort=semver&style=for-the-badge)
 
 This repository helps me experiment with the DDD approach.
