@@ -28,8 +28,6 @@ trait Validation
      * Start an assertion chain that is happening on the passed value.
      *
      * @param mixed $value
-     *
-     * @return \Assert\AssertionChain
      */
     private static function startAssertionChain($value): AssertionChain
     {
