@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace WebGarden\Model\ValueObject\Number;
 
-use Assert\AssertionChain;
-
 /**
  * @psalm-immutable
  */
-final class Natural extends Integer
+class Natural extends Integer
 {
-    protected static function assertThat(int $value): AssertionChain
+    protected static function validate($value)
     {
-        return parent::assertThat($value)->greaterThan(0);
+        return parent::validate($value)->greaterThan(0);
     }
 }

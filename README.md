@@ -28,13 +28,17 @@ composer require andrzejkupczyk/ddd-building-blocks
 ## Example usages
 
 ```php
-<?php namespace Math\Number;
+<?php
 
-final class Natural extends Integer
+namespace Brunswick\Billiards\Table;
+
+use WebGarden\Model\ValueObject\Number\Natural;
+
+final class Size extends Natural
 {
-    protected static function assertThat(int $value)
+    protected static function validate($feet)
     {
-        return parent::assertThat($value)->greaterThan(0);
+        return parent::validate($feet)->between(7, 9);
     }
 }
 ```

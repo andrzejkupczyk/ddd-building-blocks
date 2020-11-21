@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace WebGarden\Model\ValueObject\Number;
 
-use Assert\AssertionChain;
-use WebGarden\Model\Assert\Assert;
 use WebGarden\Model\ValueObject\SimpleComparison;
+use WebGarden\Model\ValueObject\Validation;
 use WebGarden\Model\ValueObject\ValueObject;
 
 /**
@@ -15,12 +14,13 @@ use WebGarden\Model\ValueObject\ValueObject;
 class Integer implements ValueObject
 {
     use SimpleComparison;
+    use Validation;
 
     private int $value;
 
-    public function __construct(int $value)
+    final public function __construct(int $value)
     {
-        static::assertThat($value);
+        static::validate($value);
 
         $this->value = $value;
     }
@@ -28,10 +28,5 @@ class Integer implements ValueObject
     public function __toString(): string
     {
         return (string) $this->value;
-    }
-
-    protected static function assertThat(int $value): AssertionChain
-    {
-        return Assert::that($value)->integer();
     }
 }
