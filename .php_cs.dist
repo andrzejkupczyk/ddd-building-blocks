@@ -11,6 +11,7 @@ return PhpCsFixer\Config::create()
         '@PhpCsFixer' => true,
         '@PhpCsFixer:risky' => true,
         'declare_strict_types' => true,
+        'multiline_whitespace_before_semicolons' => true,
         'native_function_invocation' => true,
         'yoda_style' => ['always_move_variable' => true, 'equal' => false, 'identical' => false],
     ])
