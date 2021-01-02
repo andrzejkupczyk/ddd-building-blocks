@@ -16,10 +16,8 @@ trait Validation
      * Start validation on a value.
      *
      * @param mixed $value
-     *
-     * @return \Assert\AssertionChain
      */
-    protected static function validate($value)
+    protected static function validate($value): AssertionChain
     {
         return static::startAssertionChain($value);
     }
