@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebGarden\Model\ValueObject\Identity;
 
+use Assert\AssertionChain;
 use Ramsey\Uuid\Uuid as BaseUuid;
 use WebGarden\Model\ValueObject\StringLiteral\StringLiteral;
 
@@ -22,7 +23,7 @@ final class Uuid extends StringLiteral
         return new self(BaseUuid::NIL);
     }
 
-    protected static function validate($value)
+    protected static function validate($value): AssertionChain
     {
         return parent::validate(BaseUuid::isValid($value))
             ->true("Value \"{$value}\" is not a valid UUID");
