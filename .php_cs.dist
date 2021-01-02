@@ -1,7 +1,7 @@
 <?php
 /*
  * This document has been generated with
- * https://mlocati.github.io/php-cs-fixer-configurator/#version:2.15.3|configurator
+ * https://mlocati.github.io/php-cs-fixer-configurator/#version:2.16.10|configurator
  * you can change this configuration by importing this file.
  */
 return PhpCsFixer\Config::create()
@@ -13,9 +13,10 @@ return PhpCsFixer\Config::create()
         'declare_strict_types' => true,
         'multiline_whitespace_before_semicolons' => true,
         'native_function_invocation' => true,
-        'yoda_style' => ['always_move_variable' => true, 'equal' => false, 'identical' => false],
+        'yoda_style' => ['always_move_variable'=>true,'equal'=>false,'identical'=>false],
     ])
     ->setFinder(PhpCsFixer\Finder::create()
         ->exclude(['spec', 'vendor'])
         ->in(__DIR__)
-    );
+    )
+    ;
