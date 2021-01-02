@@ -9,6 +9,7 @@ use WebGarden\Model\ValueObject\Validation;
 use WebGarden\Model\ValueObject\ValueObject;
 
 /**
+ * @see https://github.com/myclabs/php-enum#documentation
  * @psalm-immutable
  */
 abstract class Enum extends BaseEnum implements ValueObject
